@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html><!-- InstanceBegin template="/Templates/base.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+<meta http-equiv="Expires" content="-1" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>List's Default Setting | Grouping Wizard - a lucky draw and grouping tool</title>
+<!-- InstanceEndEditable -->
+
+<!-- favicon for all desktop browsers (but low quality) -->
+<link rel="shortcut icon" 			href="../appfiles/favicon.ico" />
+
+<!-- Higher quality favicon for all desktop browsers excpet IE -->
+<link rel="icon" type="image/png"  		href="../appfiles/icon.png" />
+
+<!-- iOS and Android home screen icon -->
+<link rel="apple-touch-icon-precomposed"   	href="../appfiles/icon-114.png" />
+
+<!-- Icon/Screenshot when adding link to Facebook -->
+<link rel="image_src" 				href="../appfiles/icon-114.png" />
+<meta name="title" content="《勁抽》- 分組抽籤易" />
+<meta name="description" content="Grouping Wizard - a lucky draw and grouping tool" />
+
+<link rel="stylesheet" type="text/css" href="../css/themes/RandomGroup.css" />
+<link rel="stylesheet" type="text/css" href="../css/jquery.mobile.structure-1.1.0-rc.1.min.css" />
+<!--<link rel="stylesheet" type="text/css" href="../css/jquery.mobile.structure-1.1.1.min.css" />-->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>-->
+<script type="text/javascript" src="../js/plugins/jquery-1.6.4.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.json-2.2.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jstorage.js"></script>
+<script type="text/javascript" src="../js/mobileinit.js"></script>
+
+<script type="text/javascript" src="../js/plugins/jquery.mobile-20120327.js"></script>
+<!--<script type="text/javascript" src="../js/plugins/jquery.mobile-1.1.1.min.js"></script> -->
+
+<script type="text/javascript" src="../js/plugins/jquery.format-1.1.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="../js/utility.js"></script>
+<script type="text/javascript" src="../js/pagescript.js"></script>
+<script type="text/javascript" src="../js/pagescriptgroup.js"></script>
+<script type="text/javascript" src="../js/pagescriptdraw.js"></script>
+<script type="text/javascript" src="../js/algorithm.js"></script>
+<script type="text/javascript" src="../js/drawalgorithm.js"></script>
+<script type="text/javascript" src="../js/savedata.js"></script>
+<script type="text/javascript" src="../js/groupanimation.js"></script>
+<script type="text/javascript" src="../js/drawanimation.js"></script>
+<script src="../phonegap.js" type="text/javascript"></script>
+<!-- InstanceBeginEditable name="headscript" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="headstyle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="id" type="text" value="pageListSetting" -->
+<!-- InstanceParam name="data-theme" type="text" value="a" -->
+<!-- InstanceParam name="return_href" type="text" value="listmenu_en.html" -->
+</head>
+<body>
+<div id="socialToolbar">
+</div>
+<div class="page-en" data-role="page" id="pageListSetting">
+  <div data-role="header" data-position="inline" data-theme="a" class="header2">
+  	<a href="home_en.html" data-icon="home" data-iconpos="notext" class="ui-btn-left btnHome">Home</a>
+    <h1><!-- InstanceBeginEditable name="page1titleh2" -->List Settings<!-- InstanceEndEditable --></h1><!-- InstanceBeginEditable name="page1navbar" --><!-- InstanceEndEditable --></div>
+  <div data-role="content">
+  <!-- InstanceBeginEditable name="page1content" -->
+    <div><small>* Fill in / Edit the list name, total no. of groups and maximum no. of people in one group.
+Select the fields (name, criteria &amp; export) to be shown in the grouping or draw results. After completion, click on <strong class="listSubHeader">"Save Settings"</strong>.</small></div><br />
+    <input type="hidden" id="lblListID" name="lblListID" value="" />
+    <div class="ui-bar ui-bar-c listNameBar">List: <span class="lblListName"></span></div>
+  <div class="ui-bar">People: <span class="spanPeople">20</span>&nbsp;&nbsp;&nbsp;Fields: <span class="spanFields">3</span></div>
+  <h3 class="listSubHeader">List's Default Settings</h3>
+    <div class="content-left">
+      <div data-role="fieldcontain">
+        <label for="txtListName">List Name:</label>
+        <input type="text" id="txtListName" name="txtListName" value="" />
+      </div>
+      <h4 class="listSubHeader">Field-Related Settings:</h4>
+      <div><small>* Select the fields (name, criteria &amp; export) to be shown in the grouping or draw results. For more details, click to expand "Notes: Field-Related Settings".</small></div>
+      <div data-role="fieldcontain">
+        <div id="divFieldSetting">
+          <table cellspacing="0" cellpadding="0" border="0">
+            <thead>
+              <tr>
+                <th>Field Name</th>
+                <th title="* The single field which is represented the person (and shown in animation mode ). [e.g. Name]"><span class="highlight">Name Field</span><br />
+                  <small>(1 field)</small></th>
+                <th title="* The fields which are needed to be evenly distributed between groups. [e.g. Class, Gender]">Criteria Field(s)<br />
+                  <small>(0-1 fields)</small></th>
+                <th title="* The fields which are needed to export. [e.g. Student Number]">Export Field(s)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>#</th>
+                <td><input type="radio" name="radNameField" class="radNameField" value="f0" data-role="none" /></td>
+                <td><input type="checkbox" name="chkCriteriaField" class="chkCriteriaField" value="f0" data-role="none" /></td>
+                <td><input type="checkbox" name="chkExportField" class="chkExportField" value="f0" data-role="none" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div style="max-width:80%; margin-left:10px">
+        <div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="a" data-mini="true">
+          <h4>Notes: Field-Related Settings</h4>
+          <div>
+            <small><strong>#:</strong><br />The system ID field which starts with 1.</small><br />
+            <small><strong>* Name Field:</strong><br />The single field which is represented the person (and shown in visualize mode ).<br />
+            <em>e.g. Name</em></small><br />
+            <small><strong>* Criteria Field(s):</strong><br />The fields which are needed to be evenly distributed between groups. <br />
+            <em>e.g. Class, Gender</em></small><br />
+            <small><strong>* Export Field(s):</strong><br />The fields which are needed to export.<br />
+            <em>e.g. Student Number</em></small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-right">
+      <div data-role="collapsible" data-collapsed="false" data-theme="l" data-content-theme="a" data-iconpos="right">
+        <h4><img src="../css/images/groupicon.png" alt="Group" style="vertical-align:middle; height:2em;"> Group-Related Settings:</h4>
+        <div data-role="fieldcontain">List People: <span id="lblTotalRows">0</span> </div>
+        <div data-role="fieldcontain">
+          <label for="txtNoOfGroup">No. of Group:</label>
+          <input type="text" id="txtNoOfGroup" name="txtNoOfGroup" value="" size="10" />
+        </div>
+        <div data-role="fieldcontain">
+          <label for="txtMaxGroupSize">Max. People in a Group:</label>
+          <input type="text" id="txtMaxGroupSize" name="txtMaxGroupSize" value="5" size="10" />
+        </div>
+        <div data-role="fieldcontain"> Max. People has a Group: <span id="lblMaxHasGroup">0</span> 
+        <br /><small>* If this figure is less than &quot;People&quot;, some people will not be placed in a group. The system will choose those exceeding randomly.</small>
+        </div>
+      </div>
+      <br />
+      <div style="text-align:right"><input type="button" data-icon="save" id="btnSaveSettings" name="btnSaveSettings" value="Save Settings" data-theme="m" data-inline="true"  /></div>
+    </div>
+    <!-- /content-secondary -->
+    <div id="divDataTable" style="display:none"> </div>
+    <div style="clear:both" class="divRunBtnBlock">
+    <!--
+      <input type="button" id="btnSaveSettings" name="btnSaveSettings" value="Save Settings" data-theme="m" />-->
+    </div>
+    <!-- InstanceEndEditable -->
+  <input type="hidden" value="en" id="lang" name="lang" />
+  </div>
+  <!-- /content -->
+  <div data-role="footer" data-id="divFooter" class="divFooter" data-position="fixed" data-tap-toggle="false"><!-- InstanceBeginEditable name="page1footer" --><div data-role="navbar">
+      <ul>
+        <li><a href="listsetting_en.html" data-theme="c" class="btnListSetting" data-icon="edit"><span class="notForMobile">List </span>Settings</a></li>
+        <li><a href="listtable_en.html" data-theme="a" class="btnListTable" data-icon="grid"><span class="notForMobile">Data </span>Table</a></li>
+        <li><a href="listaction_en.html" data-theme="a" class="btnListAction" data-icon="star">Actions</a></li>
+      </ul>
+    </div><!-- InstanceEndEditable --><a href="listmenu_en.html" data-icon="back" class="ui-btn-right btnBack" data-role="button" data-theme="b">Return</a><span class="footerText">&copy; 2012 Education Bureau, HKSAR Government</span></div>
+  <!-- /footer --> 
+</div>
+<!-- /page -->
+<!-- InstanceBeginEditable name="page2" --> <!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>
