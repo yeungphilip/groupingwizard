@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html><!-- InstanceBegin template="/Templates/base.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+<meta http-equiv="Expires" content="-1" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Grouping Wizard - a lucky draw and grouping tool</title>
+<!-- InstanceEndEditable -->
+
+<!-- favicon for all desktop browsers (but low quality) -->
+<link rel="shortcut icon" 			href="../appfiles/favicon.ico" />
+
+<!-- Higher quality favicon for all desktop browsers excpet IE -->
+<link rel="icon" type="image/png"  		href="../appfiles/icon.png" />
+
+<!-- iOS and Android home screen icon -->
+<link rel="apple-touch-icon-precomposed"   	href="../appfiles/icon-114.png" />
+
+<!-- Icon/Screenshot when adding link to Facebook -->
+<link rel="image_src" 				href="../appfiles/icon-114.png" />
+<meta name="title" content="《勁抽》- 分組抽籤易" />
+<meta name="description" content="Grouping Wizard - a lucky draw and grouping tool" />
+
+<link rel="stylesheet" type="text/css" href="../css/themes/RandomGroup.css" />
+<link rel="stylesheet" type="text/css" href="../css/jquery.mobile.structure-1.1.0-rc.1.min.css" />
+<!--<link rel="stylesheet" type="text/css" href="../css/jquery.mobile.structure-1.1.1.min.css" />-->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>-->
+<script type="text/javascript" src="../js/plugins/jquery-1.6.4.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.json-2.2.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jstorage.js"></script>
+<script type="text/javascript" src="../js/mobileinit.js"></script>
+
+<script type="text/javascript" src="../js/plugins/jquery.mobile-20120327.js"></script>
+<!--<script type="text/javascript" src="../js/plugins/jquery.mobile-1.1.1.min.js"></script> -->
+
+<script type="text/javascript" src="../js/plugins/jquery.format-1.1.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="../js/utility.js"></script>
+<script type="text/javascript" src="../js/pagescript.js"></script>
+<script type="text/javascript" src="../js/pagescriptgroup.js"></script>
+<script type="text/javascript" src="../js/pagescriptdraw.js"></script>
+<script type="text/javascript" src="../js/algorithm.js"></script>
+<script type="text/javascript" src="../js/drawalgorithm.js"></script>
+<script type="text/javascript" src="../js/savedata.js"></script>
+<script type="text/javascript" src="../js/groupanimation.js"></script>
+<script type="text/javascript" src="../js/drawanimation.js"></script>
+<script src="../phonegap.js" type="text/javascript"></script>
+<!-- InstanceBeginEditable name="headscript" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="headstyle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="id" type="text" value="pageMainMenu" -->
+<!-- InstanceParam name="data-theme" type="text" value="a" -->
+<!-- InstanceParam name="return_href" type="text" value="" -->
+</head>
+<body>
+<div id="socialToolbar">
+</div>
+<div class="page-en" data-role="page" id="pageMainMenu">
+  <div data-role="header" data-position="inline" data-theme="a" class="header2">
+  	<a href="home_en.html" data-icon="home" data-iconpos="notext" class="ui-btn-left btnHome">Home</a>
+    <h1><!-- InstanceBeginEditable name="page1titleh2" -->Main Menu<!-- InstanceEndEditable --></h1><!-- InstanceBeginEditable name="page1navbar" --><!-- InstanceEndEditable --></div>
+  <div data-role="content">
+  <!-- InstanceBeginEditable name="page1content" -->
+    <div class="nolist divWarning"><div class="ui-bar ui-bar-g">No lists.<br />Please click "List Settings" to create or import.</div></div>
+    <div class="divInfoBox outer">
+      <div class="divInfoBox2">
+        <div class="divInfoBox inner">
+          <div class="divInfoBox2"> 
+          <a href="listmenu_en.html" data-role="button" data-theme="c"><img src="../css/images/listicon.png" style="vertical-align:bottom" width="45" height="45" alt="List settings"> List Settings</a>
+            <hr color="#E6E7E8" size="1"/>
+            <div class="ui-grid-a">
+              <div class="ui-block-a" style="text-align:center;">
+                <div class="nolist"><img src="../css/images/groupicon.png" width="20" height="20" alt="Group"><span style="min-width:55px;display:inline-block">(Group)</span></div>
+                <a href="javascript:void(0)" id="btnRun" name="btnRun" data-role="button" data-theme="l"><img src="../css/images/groupicon.png" width="35" height="35" alt="Group"><span style="min-width:65px;display:inline-block">Group</span></a> <a href="resultmenu_en.html" id="btnResultMenu1" >History</a> </div>
+              <div class="ui-block-b" style="text-align:center;">
+                <div class="nolist"><img src="../css/images/drawicon.png" width="20" height="20" alt="Draw"><span style="min-width:55px;display:inline-block">(Draw)</span></div>
+                <a href="javascript:void(0)" id="btnDraw" name="btnDraw" data-role="button" data-theme="j"><img src="../css/images/drawicon.png" width="35" height="35" alt="Draw"><span style="min-width:65px;display:inline-block">Draw</span></a> <a href="drawresultmenu_en.html" id="btnResultMenu2" >History</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="divExtraBtn">
+      <div class="ui-grid-a">
+        <div class="ui-block-a" style="text-align:center"> <a href="setting_en.html" data-role="button" data-theme="b"><img src="../css/images/settingicon.png" width="30" height="30" alt="Setting"><span style="min-width:60px;display:inline-block">Setting</span></a> </div>
+        <div class="ui-block-b" style="text-align:center"> <a href="info_en.html" data-role="button" data-theme="b"><img src="../css/images/infoicon.png" width="30" height="30" alt="Info"><span style="min-width:60px;display:inline-block">Info</span></a> </div>
+      </div>
+      <!-- /grid-a --> 
+    </div>
+    <!-- InstanceEndEditable -->
+  <input type="hidden" value="en" id="lang" name="lang" />
+  </div>
+  <!-- /content -->
+  <div data-role="footer" data-id="divFooter" class="divFooter" data-position="fixed" data-tap-toggle="false"><!-- InstanceBeginEditable name="page1footer" --><!-- InstanceEndEditable --><a href="" data-icon="back" class="ui-btn-right btnBack" data-role="button" data-theme="b">Return</a><span class="footerText">&copy; 2012 Education Bureau, HKSAR Government</span></div>
+  <!-- /footer --> 
+</div>
+<!-- /page -->
+<!-- InstanceBeginEditable name="page2" --> <!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

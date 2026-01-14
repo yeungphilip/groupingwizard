@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /wp-admin/admin-ajax.php
+Allow: /web/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /readme.html 
+Disallow: /licence.txt 
+Disallow: /wp-config-sample.php
+Disallow: /wp-config.php
+Sitemap:https://ivantsoi.myds.me/wp-sitemap.xml

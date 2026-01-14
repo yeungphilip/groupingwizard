@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Cache-control" content="no-cache" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>《勁抽》- 分組抽籤易 | Grouping Wizard - a lucky draw and grouping tool</title>
+
+
+
+<!-- favicon for all desktop browsers (but low quality) -->
+<link rel="shortcut icon" 			href="appfiles_ch/favicon.ico" />
+
+<!-- Higher quality favicon for all desktop browsers excpet IE -->
+<link rel="icon" type="image/png"  		href="appfiles_ch/icon.png" />
+
+<!-- iOS and Android home screen icon -->
+<link rel="apple-touch-icon-precomposed"   	href="appfiles_ch/icon-114.png" />
+
+<!-- Icon/Screenshot when adding link to Facebook -->
+<link rel="image_src" 				href="appfiles_ch/icon-114.png" />
+<meta name="title" content="《勁抽》- 分組抽籤易" />
+<meta name="description" content="Grouping Wizard - a lucky draw and grouping tool" />
+
+<style type="text/css">
+body{
+	margin:0;
+	padding:0;
+	background-color:#F2F0E7;
+	text-align:center;
+}
+img{
+	width:80%;
+	*width:auto;
+	max-width:320px;
+	height:auto;
+}
+div.block {
+	text-align:center;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+a img{
+	border:1px solid #09F;
+}
+hr {
+	width:60%;
+	*width:300px;
+	max-width:300px;
+}
+</style>
+<!--[if IE 8]>
+	<style type="text/css">
+    img{
+        width:auto;
+    }
+    hr {
+        width:300px;
+    }
+    </style>
+<![endif]-->
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="js/plugins/jquery-1.6.4.js"></script>
+<script type="text/javascript" src="js/plugins/jstorage.js"></script>
+<script type="text/javascript">
+<!--
+$(document).ready(function(){
+	var autoJump = false;
+	var jumping = false;
+	try{
+		var lang = null;
+		var sLang = null;
+		try{
+			sLang = $.jStorage.get("randomlang");
+		}catch(err){}
+		if(autoJump){
+			if(sLang == null || (typeof sLang == "undefined")){
+				lang = navigator.userLanguage;
+				if(typeof lang == "undefined"){
+					lang = navigator.systenLanguage;
+					if(typeof lang == "undefined"){
+						lang = navigator.browserLanguage;
+						if(typeof lang == "undefined"){
+							lang = navigator.language;
+						}
+					}
+				}
+			} 
+			else {
+			}
+		}
+		if(lang == null) {lang = "";}
+		if((sLang =="ch") || (lang.indexOf("zh") > -1)){
+			window.location.href = "page/home_ch.html";jumping=true;
+		}
+		else if((sLang =="en") || (lang.indexOf("en") > -1)){
+			window.location.href = "page/home_en.html";jumping=true;
+		}
+		else if((autoJump==true)){
+			window.location.href = "page/home_en.html";jumping=true;
+		}
+	}catch(err){
+		if(autoJump){window.location.href = "page/home_en.html";jumping=true;}
+	}
+	if(jumping != true){
+		$("#divLoading, #divLoaded").toggle();
+	}
+});
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-30148108-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+//-->
+</script>
+<script src="phonegap.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="divLoading">
+	<div class="block">Loading ...</div>
+</div>
+<div id="divLoaded" style="display:none;">
+    <div class="block">Please select language. 請選擇語言。</div>
+    <a href="page/home_en.html"><img src="css/images/logo_en.png" alt="Grouping Wizard - a lucky draw and grouping tool" /></a><br />
+    <hr color="#cccccc" size="1" width="60%" style="max-width:300px;" />
+    <a href="page/home_ch.html"><img src="css/images/logo_ch.png" alt="《勁抽》- 分組抽籤易" /></a><br /><br />
+</div>
+</body>
+</html>

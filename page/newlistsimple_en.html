@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html><!-- InstanceBegin template="/Templates/base.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+<meta http-equiv="Expires" content="-1" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>New List | Grouping Wizard - a lucky draw and grouping tool</title>
+<!-- InstanceEndEditable -->
+
+<!-- favicon for all desktop browsers (but low quality) -->
+<link rel="shortcut icon" 			href="../appfiles/favicon.ico" />
+
+<!-- Higher quality favicon for all desktop browsers excpet IE -->
+<link rel="icon" type="image/png"  		href="../appfiles/icon.png" />
+
+<!-- iOS and Android home screen icon -->
+<link rel="apple-touch-icon-precomposed"   	href="../appfiles/icon-114.png" />
+
+<!-- Icon/Screenshot when adding link to Facebook -->
+<link rel="image_src" 				href="../appfiles/icon-114.png" />
+<meta name="title" content="《勁抽》- 分組抽籤易" />
+<meta name="description" content="Grouping Wizard - a lucky draw and grouping tool" />
+
+<link rel="stylesheet" type="text/css" href="../css/themes/RandomGroup.css" />
+<link rel="stylesheet" type="text/css" href="../css/jquery.mobile.structure-1.1.0-rc.1.min.css" />
+<!--<link rel="stylesheet" type="text/css" href="../css/jquery.mobile.structure-1.1.1.min.css" />-->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>-->
+<script type="text/javascript" src="../js/plugins/jquery-1.6.4.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.json-2.2.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jstorage.js"></script>
+<script type="text/javascript" src="../js/mobileinit.js"></script>
+
+<script type="text/javascript" src="../js/plugins/jquery.mobile-20120327.js"></script>
+<!--<script type="text/javascript" src="../js/plugins/jquery.mobile-1.1.1.min.js"></script> -->
+
+<script type="text/javascript" src="../js/plugins/jquery.format-1.1.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="../js/utility.js"></script>
+<script type="text/javascript" src="../js/pagescript.js"></script>
+<script type="text/javascript" src="../js/pagescriptgroup.js"></script>
+<script type="text/javascript" src="../js/pagescriptdraw.js"></script>
+<script type="text/javascript" src="../js/algorithm.js"></script>
+<script type="text/javascript" src="../js/drawalgorithm.js"></script>
+<script type="text/javascript" src="../js/savedata.js"></script>
+<script type="text/javascript" src="../js/groupanimation.js"></script>
+<script type="text/javascript" src="../js/drawanimation.js"></script>
+<script src="../phonegap.js" type="text/javascript"></script>
+<!-- InstanceBeginEditable name="headscript" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="headstyle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="id" type="text" value="pageNewListSimple" -->
+<!-- InstanceParam name="data-theme" type="text" value="a" -->
+<!-- InstanceParam name="return_href" type="text" value="listmenu_en.html" -->
+</head>
+<body>
+<div id="socialToolbar">
+</div>
+<div class="page-en" data-role="page" id="pageNewListSimple">
+  <div data-role="header" data-position="inline" data-theme="a" class="header2">
+  	<a href="home_en.html" data-icon="home" data-iconpos="notext" class="ui-btn-left btnHome">Home</a>
+    <h1><!-- InstanceBeginEditable name="page1titleh2" -->New List<!-- InstanceEndEditable --></h1><!-- InstanceBeginEditable name="page1navbar" --><!-- InstanceEndEditable --></div>
+  <div data-role="content">
+  <!-- InstanceBeginEditable name="page1content" -->
+  	<div id="divCreateList">
+        <h3>Create a list with numbers .</h3>
+        <div data-role="fieldcontain">
+        <label for="sliderCreateListEndNumber">1 to</label>
+        <input type="range" name="sliderCreateListEndNumber" id="sliderCreateListEndNumber" value="40" min="2" max="200" data-track-theme="b"  />
+        </div>
+        <div style="text-align:right">
+        <input type="button" value="Create List" id="btnCreateListWithNumber" data-theme="h" data-inline="true" />
+        </div>
+        <br />
+        <hr />
+        <h3>Paste the names into the below text field.</h3>
+        <div><small>* (One line each name)</small></div>
+        <div data-role="fieldcontain">
+        <textarea id="txtCreateListAllNames" name="txtCreateListAllNames" rows="5"></textarea>
+        </div>
+        <div style="text-align:right">
+        <input type="button" value="Create List" id="btnCreateListWithNames" data-theme="h" data-inline="true" />
+        </div>
+    </div>
+    <div id="divSaveList" style="display:none">
+    	<div><small><strong class="highlight-red">The list has yet saved!</strong><br />*  <strong class="listSubHeader">Name</strong> the list and then click on <strong class="listSubHeader">"Save List"</strong>.</small></div>
+        <div data-role="fieldcontain"><label for="txtNewListName">List Name:</label>
+        <input type="text" value="List Name" id="txtNewListName" name="txtNewListName" /></div>
+        <div style="text-align:right">
+        <input type="button" value="Save List" id="btnSaveNewList" data-theme="m" data-inline="true" data-icon="save" />
+        </div>
+        <div>List Preview:</div>
+        <div><small><strong>#: </strong>System ID</small></div>
+        <div id="divNewDataTable"></div>
+  	</div>
+  <!-- InstanceEndEditable -->
+  <input type="hidden" value="en" id="lang" name="lang" />
+  </div>
+  <!-- /content -->
+  <div data-role="footer" data-id="divFooter" class="divFooter" data-position="fixed" data-tap-toggle="false"><!-- InstanceBeginEditable name="page1footer" --><!-- InstanceEndEditable --><a href="listmenu_en.html" data-icon="back" class="ui-btn-right btnBack" data-role="button" data-theme="b">Return</a><span class="footerText">&copy; 2012 Education Bureau, HKSAR Government</span></div>
+  <!-- /footer --> 
+</div>
+<!-- /page -->
+<!-- InstanceBeginEditable name="page2" -->
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

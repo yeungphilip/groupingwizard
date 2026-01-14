@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html><!-- InstanceBegin template="/Templates/base_ch.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+<meta http-equiv="Expires" content="-1" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>新名單 | 《勁抽》- 分組抽籤易</title>
+<!-- InstanceEndEditable -->
+
+<!-- favicon for all desktop browsers (but low quality) -->
+<link rel="shortcut icon" 			href="../appfiles_ch/favicon.ico" />
+
+<!-- Higher quality favicon for all desktop browsers excpet IE -->
+<link rel="icon" type="image/png"  		href="../appfiles_ch/icon.png" />
+
+<!-- iOS and Android home screen icon -->
+<link rel="apple-touch-icon-precomposed"   	href="../appfiles_ch/icon-114.png" />
+
+<!-- Icon/Screenshot when adding link to Facebook -->
+<link rel="image_src" 				href="../appfiles_ch/icon-114.png" />
+<meta name="title" content="《勁抽》- 分組抽籤易" />
+<meta name="description" content="Grouping Wizard - a lucky draw and grouping tool" />
+
+
+<link rel="stylesheet" type="text/css" href="../css/themes/RandomGroup.css" />
+<link rel="stylesheet" type="text/css" href="../css/jquery.mobile.structure-1.1.0-rc.1.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../js/plugins/jquery-1.6.4.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.json-2.2.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jstorage.js"></script>
+<script type="text/javascript" src="../js/mobileinit.js"></script>
+
+<script type="text/javascript" src="../js/plugins/jquery.mobile-20120327.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.format-1.1.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="../js/utility.js"></script>
+<script type="text/javascript" src="../js/pagescript.js"></script>
+<script type="text/javascript" src="../js/pagescriptgroup.js"></script>
+<script type="text/javascript" src="../js/pagescriptdraw.js"></script>
+<script type="text/javascript" src="../js/algorithm.js"></script>
+<script type="text/javascript" src="../js/drawalgorithm.js"></script>
+<script type="text/javascript" src="../js/savedata.js"></script>
+<script type="text/javascript" src="../js/groupanimation.js"></script>
+<script type="text/javascript" src="../js/drawanimation.js"></script>
+<script src="../phonegap.js" type="text/javascript"></script>
+<!-- InstanceBeginEditable name="headscript" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="headstyle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="id" type="text" value="pageNewListImport" -->
+<!-- InstanceParam name="data-theme" type="text" value="a" -->
+<!-- InstanceParam name="return_href" type="text" value="listmenu_ch.html" -->
+</head>
+<body>
+<div id="socialToolbar">
+</div>
+<div class="page-ch" data-role="page" id="pageNewListImport">
+  <div data-role="header" data-position="inline" data-theme="a" class="header2">
+    <a href="home_ch.html" data-icon="home" data-iconpos="notext" class="ui-btn-left btnHome">主頁</a><h1><!-- InstanceBeginEditable name="page1titleh2" -->新名單<!-- InstanceEndEditable --></h1><!-- InstanceBeginEditable name="page1navbar" --><!-- InstanceEndEditable --></div>
+  <div data-role="content">
+  <!-- InstanceBeginEditable name="page1content" -->
+    <div id="divCreateList">
+      <h3>從檔案匯入名單</h3>
+      <div><small>*（支援檔案類型：<strong>.xls</strong>, <strong>.xlsx</strong>, <strong>.csv</strong>, <strong>.txt</strong>。如欲更詳細了解支援檔案類型，請捲動至頁底。）</small></div>
+      <div class="notforios">
+      	<form action="../ajax/importfromupload.php" target="fileiframe" method="post" enctype="multipart/form-data" data-ajax="false" name="formImport" id="formImport">
+        <div data-role="fieldcontain">
+          <label for="fileImport" class="ui-input-text">上載檔案：</label>
+          <br />
+<div id="divDragFile" class="ui-bar ui-bar-b"><input type="file" multiple id="fileImport" name="fileImport" /><span class="lblDragfile" style="display:none">（ <em>把檔案直接拖放到這裡</em> <img src="../css/images/upload-18-white.png" width="18" height="18" style="vertical-align:middle" /> 或 <em><span class="highlight">按這裡一下</span> 瀏覽並選擇檔案</em> <img src="../css/images/file-18-white.png" width="18" height="18" style="vertical-align:middle" /> 。）</span><span class="lblSelectfile">（<em><span class="highlight">按這裡一下</span> 瀏覽並選擇檔案</em> <img src="../css/images/file-18-white.png" width="18" height="18" style="vertical-align:middle" /> 。）</span>
+<div id="lblSelectedFile" style="display:none"><strong>* 選取的檔案: <span id="lblSelectedPath"></span></strong></div></div><span class="errorMsg">* 檔案類型不支援</span>
+          
+        </div>
+        </form>
+        <div><small>* <strong class="listSubHeader">瀏覽</strong>匯入檔案，然後按<strong class="listSubHeader">「匯入」</strong>。</small></div>
+        <div style="text-align:right">
+          <input type="button" value="匯入" id="btnImportFile1" data-theme="h" data-inline="true" />
+        </div>
+        <div style="display:none"><iframe name="fileiframe" id="fileiframe"></iframe></div>
+        <hr />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="txtImportFromWeb">網上抓取：</label>
+        <input type="text" id="txtImportFromWeb" name="txtImportFromWeb" value="http://" />
+      </div>
+      <div><small>* 把<strong class="listSubHeader">檔案的網址</strong>填入空格內，然後按<strong class="listSubHeader">「匯入」</strong>。</small></div>
+      <div style="text-align:right">
+        <input type="button" value="匯入" id="btnImportFile2" data-theme="h" data-inline="true" />
+      </div>
+      <br />
+      <div class="divBox ui-bar ui-bar-h divSupportType">支援檔案類型：<br />
+        <em>(按一下類型下載範例)</em>
+        <ul>
+          <li>微軟 Excel：<a href="../samples/sample.xls" target="_blank" rel="external">.xls</a>, <a href="../samples/sample.xlsx" target="_blank" rel="external">.xlsx</a> <em><small>（只匯入首張工作表）</small></em></li>
+          <li>逗號分隔：<a href="../samples/sample.csv" target="_blank" rel="external">.csv</a></li>
+          <!--<li>XML: <a href="../ajax/import.html" target="_blank">.xml</a></li>-->
+          <li>純文字 TXT(Tab分隔)：<a href="../samples/sample.txt" target="_blank" rel="external">.txt</a></li>
+        </ul>
+      </div>
+      <br />
+      <div class="divBox">
+        <small><strong class="listSubHeader">* 匯入的檔案需包含用作分組/抽籤的資料，<em>例如：名稱、編號、分組條件......</em>。</strong><br />
+        匯入資料例子:
+        <ul>
+          <li>學生姓名 <em>(建議為首欄)</em></li>
+          <li>學號</li>
+          <li>姓別</li>
+          <li>能力程度...</li>
+        </ul>
+        </small>
+      </div>
+    </div>
+    <div id="divSaveList" style="display:none">
+      <div><small><strong class="highlight-red">名單尚未儲存！</strong><br />* 檢查名單，把名單<strong class="listSubHeader">命名</strong>，然後按<strong class="listSubHeader">「儲存」</strong>。</small></div>
+      <div data-role="fieldcontain">
+        <label for="txtNewListName">名單名稱：</label>
+        <input type="text" value="名單名稱" id="txtNewListName" name="txtNewListName" />
+      </div>
+      <div style="text-align:right">
+        <input type="button" value="儲存" id="btnSaveNewList" data-theme="m" data-inline="true" data-icon="save" />
+      </div>
+      <div>名單預覽：</div>
+      <div><small><strong>#：</strong>系統編號</small></div>
+      <div id="divNewDataTable"></div>
+    </div>
+    <!-- InstanceEndEditable -->
+  <input type="hidden" value="ch" id="lang" name="lang" />
+  </div>
+  <!-- /content -->
+  <div data-role="footer" data-id="divFooter" class="divFooter" data-position="fixed" data-tap-toggle="false"><!-- InstanceBeginEditable name="page1footer" --><!-- InstanceEndEditable --><a href="listmenu_ch.html" data-icon="back" class="ui-btn-right btnBack" data-role="button" data-theme="b">返回</a><span class="footerText">&copy; 2012 Education Bureau, HKSAR Government</span></div>
+  <!-- /footer --> 
+</div>
+<!-- /page -->
+<!-- InstanceBeginEditable name="page2" --> <!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>
