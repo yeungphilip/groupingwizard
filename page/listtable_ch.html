@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html><!-- InstanceBegin template="/Templates/base_ch.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+<meta http-equiv="Expires" content="-1" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>瀏覽名單 | 《勁抽》- 分組抽籤易</title>
+<!-- InstanceEndEditable -->
+
+<!-- favicon for all desktop browsers (but low quality) -->
+<link rel="shortcut icon" 			href="../appfiles_ch/favicon.ico" />
+
+<!-- Higher quality favicon for all desktop browsers excpet IE -->
+<link rel="icon" type="image/png"  		href="../appfiles_ch/icon.png" />
+
+<!-- iOS and Android home screen icon -->
+<link rel="apple-touch-icon-precomposed"   	href="../appfiles_ch/icon-114.png" />
+
+<!-- Icon/Screenshot when adding link to Facebook -->
+<link rel="image_src" 				href="../appfiles_ch/icon-114.png" />
+<meta name="title" content="《勁抽》- 分組抽籤易" />
+<meta name="description" content="Grouping Wizard - a lucky draw and grouping tool" />
+
+
+<link rel="stylesheet" type="text/css" href="../css/themes/RandomGroup.css" />
+<link rel="stylesheet" type="text/css" href="../css/jquery.mobile.structure-1.1.0-rc.1.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../js/plugins/jquery-1.6.4.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.json-2.2.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jstorage.js"></script>
+<script type="text/javascript" src="../js/mobileinit.js"></script>
+
+<script type="text/javascript" src="../js/plugins/jquery.mobile-20120327.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.format-1.1.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="../js/utility.js"></script>
+<script type="text/javascript" src="../js/pagescript.js"></script>
+<script type="text/javascript" src="../js/pagescriptgroup.js"></script>
+<script type="text/javascript" src="../js/pagescriptdraw.js"></script>
+<script type="text/javascript" src="../js/algorithm.js"></script>
+<script type="text/javascript" src="../js/drawalgorithm.js"></script>
+<script type="text/javascript" src="../js/savedata.js"></script>
+<script type="text/javascript" src="../js/groupanimation.js"></script>
+<script type="text/javascript" src="../js/drawanimation.js"></script>
+<script src="../phonegap.js" type="text/javascript"></script>
+<!-- InstanceBeginEditable name="headscript" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="headstyle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="id" type="text" value="pageDataTable" -->
+<!-- InstanceParam name="data-theme" type="text" value="a" -->
+<!-- InstanceParam name="return_href" type="text" value="listmenu_ch.html" -->
+</head>
+<body>
+<div id="socialToolbar">
+</div>
+<div class="page-ch" data-role="page" id="pageDataTable">
+  <div data-role="header" data-position="inline" data-theme="a" class="header2">
+    <a href="home_ch.html" data-icon="home" data-iconpos="notext" class="ui-btn-left btnHome">主頁</a><h1><!-- InstanceBeginEditable name="page1titleh2" -->抽籤名單設定<!-- InstanceEndEditable --></h1><!-- InstanceBeginEditable name="page1navbar" --><!-- InstanceEndEditable --></div>
+  <div data-role="content">
+  <!-- InstanceBeginEditable name="page1content" -->
+  <input type="hidden" id="lblListID" name="lblListID" value="" />
+  <div class="ui-bar ui-bar-c listNameBar">名單：<span class="lblListName"></span></div>
+  <div class="ui-bar">人數：<span class="spanPeople">20</span>&nbsp;&nbsp;&nbsp;欄數：<span class="spanFields">3</span></div>
+  <h3>瀏覽/修改名單</h3>
+  <div style="font-size:small"><ul><li><strong class="listSubHeader">修改內容：</strong>按一下儲存格開始修改名單內容或欄位名稱，首欄「#」除外。</li>
+  <li><strong class="listSubHeader">插入列或刪除列：</strong>按一下每列首欄「#」的儲存格，按指示插入新的列或刪除該列。</li>
+  <li><strong class="listSubHeader">新增欄位：</strong>按一下「新增欄位」並確定，然後<span class="listSubHeader">「修改內容」</span>。
+  <span style="color:red">（* 不可刪除欄位）</span></li></ul>
+  </div>
+  <div style="text-align:right">
+        <input type="button" value="新增欄位" id="btnNewField" data-theme="k" data-inline="true" data-icon="star" class="btnNewField" />
+  		<input type="button" value="儲存" id="btnSaveTable1" data-theme="m" data-inline="true" data-icon="save" class="btnSaveTable" />
+      </div>
+  <div><small><strong>#：</strong>系統編號</small></div>
+    <div id="divDataTable"> </div>
+    <br /><br />
+    <div style="text-align:center">
+        <input type="button" value="儲存" id="btnSaveTable2" data-theme="m" data-inline="true" data-icon="save" class="btnSaveTable" />
+      </div><br />
+      
+  <div id="divTableRowHelper">
+  	<div class="innerbox">
+      <input type="button" data-icon="delete" value="刪除列" data-iconpos="left" data-theme="g" data-mini="true" data-corners="false" class="btnDelRow" /><input type="button" data-icon="arrow-u"  value="插入上方列" data-iconpos="left" data-theme="m" data-mini="true"  data-corners="false" class="btnInsertRowAbove" /><input type="button"  data-icon="arrow-d" value="插入下方列" data-iconpos="left" data-theme="m" data-mini="true" data-corners="false" class="btnInsertRowBelow" /><input type="button"  data-icon="minus" value="關閉" data-iconpos="left" data-theme="b" data-mini="true"  data-corners="false" class="btnCloseRowMenu" />
+      </div>
+  </div>
+  <!-- InstanceEndEditable -->
+  <input type="hidden" value="ch" id="lang" name="lang" />
+  </div>
+  <!-- /content -->
+  <div data-role="footer" data-id="divFooter" class="divFooter" data-position="fixed" data-tap-toggle="false"><!-- InstanceBeginEditable name="page1footer" -->
+  <div data-role="navbar">
+      <ul>
+        <li><a href="listsetting_ch.html" data-theme="a" class="btnListSetting" data-icon="edit">名單設定</a></li>
+        <li><a href="listtable_ch.html" data-theme="c" class="btnListTable" data-icon="grid">瀏覽名單</a></li>
+        <li><a href="listaction_ch.html" data-theme="a" class="btnListAction" data-icon="star">分組/抽籤</a></li>
+      </ul>
+    </div><!-- InstanceEndEditable --><a href="listmenu_ch.html" data-icon="back" class="ui-btn-right btnBack" data-role="button" data-theme="b">返回</a><span class="footerText">&copy; 2012 Education Bureau, HKSAR Government</span></div>
+  <!-- /footer --> 
+</div>
+<!-- /page -->
+<!-- InstanceBeginEditable name="page2" -->
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>
